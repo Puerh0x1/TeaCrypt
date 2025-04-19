@@ -2,7 +2,7 @@ from ALGS.RSA.keyGen import *
 from KEYSAVE.jwk_save import *
 from KEYSAVE.pem_save import *
 
-RSA_keys = mainGeneration(7000)
+RSA_keys = mainGeneration(1024)
 
 print(RSA_keys)
 
