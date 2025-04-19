@@ -6,7 +6,8 @@ def toBase64url(number):
     return base64.urlsafe_b64encode(num_bytes).rstrip(b'=').decode('utf-8')
 
 
-def rsaSave(e, n, d, kid, alg='RS256'):
+def rsaSave(e, n, d, kid, keysFilename, alg='RS256'):
+    # File: .jwk
     jwk_json = {
         'kty': 'RSA',
         'e': toBase64url(e),
@@ -15,5 +16,5 @@ def rsaSave(e, n, d, kid, alg='RS256'):
         'alg': alg,
         'kid': kid # Идентификатор ключа
     }
-    with open('rsa_key.jwk', 'w') as f:
+    with open(keysFilename, 'w') as f:
         f.write(jwk_json)
