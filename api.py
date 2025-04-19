@@ -1,10 +1,11 @@
-from ALGS.RSA.mathKeyGen import *
+from ALGS.RSA.keyGen import *
 from KEYSAVE.jwk_save import *
+from KEYSAVE.pem_save import *
 
-genRes = mainGeneration(2048)
-n = genRes[2]
-e = genRes[4]
-d = genRes[5]
-rsaSave(e, n, d, "MAIN-KEY", "keys.jwk")
+RSA_keys = mainGeneration(7000)
 
+print(RSA_keys)
 
+savePublicKeyPEM(RSA_keys[4], RSA_keys[2])
+savePrivateKeyPEM(RSA_keys[5], RSA_keys[4], RSA_keys[2], RSA_keys[0], RSA_keys[1])
+print("~RSA keys saved~")

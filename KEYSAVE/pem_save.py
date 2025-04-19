@@ -2,7 +2,7 @@ from cryptography.hazmat.primitives.asymmetric import rsa
 from cryptography.hazmat.primitives import serialization
 from cryptography.hazmat.primitives.asymmetric.rsa import RSAPublicNumbers, RSAPrivateNumbers
 
-def save_public_key_to_pem(e, n, output_file="public_key.pem"):
+def savePublicKeyPEM(e, n, output_file="public_key.pem"):
     public_numbers = RSAPublicNumbers(e=e, n=n)
     public_key = public_numbers.public_key()
     pem = public_key.public_bytes(
@@ -13,7 +13,7 @@ def save_public_key_to_pem(e, n, output_file="public_key.pem"):
         f.write(pem)
     return pem.decode("utf-8")
 
-def save_private_key_to_pem(d, e, n, p, q, output_file="private_key.pem"):
+def savePrivateKeyPEM(d, e, n, p, q, output_file="private_key.pem"):
     if n != p * q:
         raise ValueError("n not equal to p * q")
     dmp1 = d % (p - 1)

@@ -68,3 +68,4 @@ def mainGeneration(bitsNum):
     privateExponent = generatePrivateExponent(publicExponent, fn)
 
     return primers[0], primers[1], n, fn, publicExponent, privateExponent
+    # p, q, n, fn, e, d
