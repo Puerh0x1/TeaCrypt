@@ -7,7 +7,7 @@ def toBase64url(number):
 
 
 def rsaSave(e, n, d, kid, alg='RS256'):
-    jwk = {
+    jwk_json = {
         'kty': 'RSA',
         'e': toBase64url(e),
         'n': toBase64url(n), 
