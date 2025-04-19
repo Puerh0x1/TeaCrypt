@@ -1,7 +1,7 @@
 import base64
 import json
 
-def toBase64url():
+def toBase64url(number):
     num_bytes = number.to_bytes((number.bit_length() + 7) // 8, byteorder='big')
     return base64.urlsafe_b64encode(num_bytes).rstrip(b'=').decode('utf-8')
 
