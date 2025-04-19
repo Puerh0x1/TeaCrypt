@@ -17,4 +17,5 @@ def rsaSave(e, n, d, kid, keysFilename, alg='RS256'):
         'kid': kid # Идентификатор ключа
     }
     with open(keysFilename, 'w') as f:
-        f.write(jwk_json)
+        f.write(str(jwk_json))
+        print("~KEYS SAVED~")
